@@ -2,12 +2,15 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var helpers = require('./helpers');
+var path= require('path');
+
+const srcPath = path.join(__dirname, '..','src');
 
 module.exports = {
   entry: {
-    'polyfills': './src/polyfills.ts',
-    'vendor': './src/vendor.ts',
-    'app': './src/main.ts'
+    'polyfills': path.join(srcPath, 'polyfills.ts'),
+    'vendor': path.join(srcPath, 'vendor.ts'),
+    'app': path.join(srcPath, 'main.ts')
   },
 
   resolve: {
